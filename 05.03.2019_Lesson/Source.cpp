@@ -3,6 +3,7 @@
 #include<math.h>
 #include<ctime>
 #include<cstring>
+#include<string.h>
 
 using namespace std;
 
@@ -65,14 +66,16 @@ int subStr(char* str1, const char* str2) {
 	}
 	return words;
 }
-int subStrStr(char* str1, const char* str2) { // error
+int subStrStr(char* str1, const char* str2) {
 	char *p = str1;
+	char *p1;
 	int words = 0;
 
 	while (p = strstr(p, str2))
 	{
-		//if (*(p - 1) != ' ') continue; //?
+		p1 = p;
 		p = p + strlen(str2);
+		if (*(p1 - 1) != ' ') continue;
 		words++;
 	}
 	return words;
@@ -91,8 +94,6 @@ int subStr_tok(char *str1, char *str2) {
 	}
 	return k;
 }
-// 13.	*Написать функцию, которая выполняет преобразование целого числа в строку
-
 
 
 int main()
@@ -210,7 +211,7 @@ int main()
 		case 8: // 16.	**Написать функцию, которая приводит строку к верхнему регистру.
 		{
 			char str[100];
-
+			// через ASCII код
 			// for(int i=0; i<)
 		}
 		break;
@@ -225,7 +226,7 @@ int main()
 
 		}
 		break;
-		case 10:
+		case 10: // 16.	**Написать функцию, которая приводит строку к верхнему регистру.
 		{
 			char buf[30];
 			cin >> buf;
